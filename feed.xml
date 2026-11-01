@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Mugi's House</title>
+    <link>https://sancerio.github.io/mugi-house/</link>
+    <description>Notes from an over-customised smart home: a cosy illustrated dashboard and a virtual shiba called Mugi.</description>
+    <language>en</language>
+    <item>
+      <title>Meet Mugi: the shiba who lives in my smart home dashboard</title>
+      <link>https://sancerio.github.io/mugi-house/posts/meet-mugi/</link>
+      <guid isPermaLink="false">meet-mugi</guid>
+      <pubDate>Sun, 01 Nov 2026 12:00:00 +0000</pubDate>
+      <description>What it controls, remotes drawn like the real ones, how it's built, Mugi's brain, a PI climate loop that only has a remote, and lessons learned.</description>
+    </item>
+  </channel>
+</rss>

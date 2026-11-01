@@ -1,0 +1,187 @@
+/* Mugi's House: the dashboard's evening palette. Deep navy room, warm lamp
+   glow, mint for anything you can tap, and Mugi's cream speech bubbles. */
+:root {
+  --bg: #0a0d15;
+  --surface: #151a28;
+  --fill: #1b2232;
+  --ink: #f2f4fa;
+  --ink-soft: #b4bdd3;
+  --ink-faint: #7f89a3;
+  --hairline: rgba(170, 182, 212, 0.12);
+  --mint: #45ecc3;
+  --mint-ink: #06231b;
+  --mint-tint: rgba(69, 236, 195, 0.12);
+  --lamp: #ffb454;
+  --lamp-tint: rgba(255, 180, 84, 0.14);
+  --bubble: #fbf3e2;
+  --bubble-ink: #3a2e24;
+  --wood: #c79a6b;
+  --r-card: 18px;
+  --measure: 41rem;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 112.5%; background: var(--bg); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(60rem 38rem at 8% -6%, rgba(255, 180, 84, 0.13), transparent 70%),
+    radial-gradient(48rem 30rem at 100% 18%, rgba(129, 140, 248, 0.08), transparent 70%),
+    radial-gradient(50rem 40rem at 50% 110%, rgba(69, 236, 195, 0.05), transparent 70%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .site-head a, .post-card h2 {
+  font-family: "Space Grotesk", "Manrope", system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+a { color: var(--mint); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: #66f2d3; }
+
+::selection { background: var(--lamp); color: #1b1206; }
+
+/* ---------- header: like the dashboard's room chips ---------- */
+.site-head {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.4rem 1.25rem 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.site-head a { text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1.05rem; }
+.site-head .paw {
+  width: 2.3rem; height: 2.3rem; border-radius: 12px;
+  display: grid; place-items: center; font-size: 1.05rem;
+  background: var(--lamp-tint); border: 1px solid rgba(255, 180, 84, 0.35);
+}
+.site-head nav { margin-left: auto; display: flex; gap: 0.5rem; }
+.site-head nav a {
+  font-family: "Manrope", system-ui, sans-serif; font-size: 0.85rem; font-weight: 700;
+  color: var(--ink-soft); padding: 0.4rem 0.85rem; border-radius: 10px;
+  background: var(--surface); border: 1px solid var(--hairline);
+}
+.site-head nav a:hover { color: var(--ink); border-color: rgba(69, 236, 195, 0.4); }
+
+main { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* ---------- home ---------- */
+.hero {
+  margin: 1.4rem 0 2.2rem;
+  border-radius: 24px;
+  background: var(--surface);
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  box-shadow: 0 2px 6px rgba(2, 4, 10, 0.45), 0 28px 60px rgba(2, 4, 10, 0.55);
+}
+.hero video, .hero img { display: block; width: 100%; height: auto; background: var(--bg); }
+.hero-copy { padding: 1.4rem 1.6rem 1.7rem; }
+.hero-copy .eyebrow, .eyebrow {
+  margin: 0 0 0.3rem; color: var(--mint); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.01em;
+}
+.hero-copy h1 { margin: 0 0 0.45rem; font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.12; }
+.hero-copy p { margin: 0; color: var(--ink-soft); max-width: 46rem; }
+
+.post-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.1rem; }
+.post-card {
+  display: grid; grid-template-columns: minmax(0, 16rem) 1fr; gap: 1.3rem; align-items: center;
+  padding: 1rem; border-radius: var(--r-card);
+  background: var(--surface); border: 1px solid var(--hairline);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.post-card:hover { border-color: rgba(69, 236, 195, 0.35); transform: translateY(-2px); }
+.post-card img { width: 100%; border-radius: 12px; display: block; }
+.post-card h2 { margin: 0 0 0.3rem; font-size: 1.3rem; line-height: 1.25; }
+.post-card h2 a { color: var(--ink); text-decoration: none; }
+.post-card p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+@media (max-width: 40rem) { .post-card { grid-template-columns: 1fr; } }
+
+.meta { color: var(--ink-faint); font-size: 0.85rem; font-weight: 600; }
+
+/* ---------- article ---------- */
+article { max-width: var(--measure); margin: 0 auto; }
+article h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.1; margin: 0.4rem 0 0.6rem; }
+article .lede { font-size: 1.15rem; color: var(--ink-soft); margin-top: 0; }
+article h2 {
+  margin: 3rem 0 0.7rem; font-size: 1.5rem; line-height: 1.25;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+/* a little lamp glowing beside each section title */
+article h2::before {
+  content: ""; width: 0.65rem; height: 0.65rem; border-radius: 50%; flex: none;
+  background: var(--lamp); box-shadow: 0 0 0 4px var(--lamp-tint), 0 0 18px 4px rgba(255, 180, 84, 0.45);
+}
+article h3 { margin: 2rem 0 0.35rem; font-size: 1.12rem; color: var(--ink); }
+article p, article li { font-size: 1rem; color: #dfe3ef; }
+article ul, article ol { padding-left: 1.3rem; }
+article li { margin: 0.35rem 0; }
+article li::marker { color: var(--mint); font-weight: 700; }
+article strong { color: var(--ink); }
+article em { color: var(--ink); }
+article code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.84em; color: #ffd8a8;
+  background: var(--fill); border: 1px solid var(--hairline); padding: 0.06em 0.38em; border-radius: 6px;
+}
+
+figure { margin: 2rem -2.5rem; }
+figure img, figure video {
+  width: 100%; display: block; border-radius: var(--r-card); background: var(--surface);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 2px 6px rgba(2, 4, 10, 0.45), 0 22px 50px rgba(2, 4, 10, 0.55);
+}
+figcaption { font-size: 0.85rem; color: var(--ink-faint); text-align: center; margin-top: 0.65rem; padding: 0 2.5rem; }
+@media (max-width: 48rem) { figure { margin: 1.6rem 0; } figcaption { padding: 0; } }
+
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.duo figcaption { grid-column: 1 / -1; }
+@media (max-width: 40rem) { .duo { grid-template-columns: 1fr; } }
+
+.diagram {
+  margin: 1.6rem 0; padding: 1.1rem 1.2rem; border-radius: var(--r-card);
+  background: var(--surface); border: 1px solid var(--hairline); color: #cfe9e1; overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.76rem; line-height: 1.5;
+}
+
+/* Notes read like Mugi talking: a cream bubble with a tail and a paw. */
+.note {
+  position: relative; margin: 1.8rem 0 1.8rem 3.2rem; padding: 0.95rem 1.2rem;
+  border-radius: 16px; background: var(--bubble); color: var(--bubble-ink);
+  box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.7);
+}
+.note::before {
+  content: "🐾"; position: absolute; left: -3.2rem; top: 0.35rem;
+  width: 2.4rem; height: 2.4rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--wood); font-size: 1.05rem;
+}
+.note::after {
+  content: ""; position: absolute; left: -0.5rem; top: 1rem; width: 1rem; height: 1rem;
+  background: var(--bubble); transform: rotate(45deg); border-radius: 2px;
+}
+.note p { margin: 0.2rem 0; color: var(--bubble-ink); }
+.note strong { color: #2a2018; }
+
+.lessons { counter-reset: lesson; list-style: none; padding: 0; }
+.lessons li {
+  counter-increment: lesson; position: relative; padding: 0.85rem 1.1rem 0.85rem 3.4rem; margin: 0.7rem 0;
+  background: var(--surface); border-radius: 14px; border: 1px solid var(--hairline);
+}
+.lessons li::before {
+  content: counter(lesson); position: absolute; left: 0.95rem; top: 0.85rem;
+  width: 1.65rem; height: 1.65rem; border-radius: 8px; display: grid; place-items: center;
+  background: var(--mint-tint); color: var(--mint); font-weight: 800; font-size: 0.85rem;
+  border: 1px solid rgba(69, 236, 195, 0.35);
+}
+
+.site-foot {
+  max-width: 64rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; color: var(--ink-faint); font-size: 0.85rem;
+  border-top: 1px solid var(--hairline);
+}

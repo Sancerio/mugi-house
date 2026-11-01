@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mugi's House</title>
+  <meta name="description" content="My smart home dashboard: the fan, lights and aircon are real, the dog isn't. Notes on how it's built.">
+  <meta property="og:title" content="Mugi's House">
+  <meta property="og:description" content="My smart home dashboard: the fan, lights and aircon are real, the dog isn't.">
+  <meta property="og:image" content="https://sancerio.github.io/mugi-house/assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="alternate" type="application/rss+xml" title="Mugi's House" href="feed.xml">
+</head>
+<body>
+  <header class="site-head">
+    <span class="paw" aria-hidden="true">🐾</span>
+    <a href="./">Mugi's House</a>
+    <nav><a href="./">Posts</a><a href="feed.xml">RSS</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <video autoplay muted loop playsinline poster="assets/img/poster.jpg">
+        <source src="assets/video/mugi-tour-15s.mp4" type="video/mp4">
+      </video>
+      <div class="hero-copy">
+        <p class="eyebrow">my smart home dashboard</p>
+        <h1>Mugi's House</h1>
+        <p>The fan, lights and aircon in my flat are real. The dog isn't. These are my notes on how it all fits together.</p>
+      </div>
+    </section>
+
+    <ul class="post-list">
+      <li class="post-card">
+        <a href="posts/meet-mugi/"><img src="assets/img/mugi-day.jpg" alt="" loading="lazy"></a>
+        <div>
+          <p class="meta">November 2026</p>
+          <h2><a href="posts/meet-mugi/">Meet Mugi: the shiba who lives in my smart home dashboard</a></h2>
+          <p>What it controls, remotes drawn like the real ones, how it's built (FastAPI on a Mac mini, Next.js, Nest Hubs as kiosks), Mugi's brain, a PI climate loop that only has a remote, and lessons learned.</p>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="site-foot">
+    Mugi's House · a cosy, over-customised smart home
+  </footer>
+</body>
+</html>
