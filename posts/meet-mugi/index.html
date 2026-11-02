@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Meet Mugi: the shiba who lives in my smart home dashboard</title>
-  <meta name="description" content="An over-customised smart home: a cosy illustrated room scene as the dashboard, a virtual shiba with moods, and a climate loop that tries the fan before the AC.">
+  <meta name="description" content="An over-customized smart home: a cozy illustrated room scene as the dashboard, a virtual shiba with moods, and a climate loop that tries the fan before the AC.">
   <meta property="og:title" content="Meet Mugi: the shiba who lives in my smart home dashboard">
-  <meta property="og:description" content="A cosy illustrated room scene as the dashboard, a virtual shiba with moods, and a climate loop that tries the fan before the AC.">
+  <meta property="og:description" content="A cozy illustrated room scene as the dashboard, a virtual shiba with moods, and a climate loop that tries the fan before the AC.">
   <meta property="og:image" content="https://sancerio.github.io/mugi-house/assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:url" content="https://sancerio.github.io/mugi-house/posts/meet-mugi/">
@@ -27,7 +27,7 @@
     <article>
       <p class="meta">November 2026 · about 14 minutes</p>
       <h1>Meet Mugi: the shiba who lives in my smart home dashboard</h1>
-      <p class="lede">My apartment's control panel isn't a grid of toggles. It's a little illustrated living room and bedroom, with the real fan spinning, the real light glowing, and a virtual shiba called Mugi wandering between them. Google Home would never let me build this. With AI coding agents, I could just describe it and build it anyway. This is how it's built, and what I learned over-customising it.</p>
+      <p class="lede">My apartment's control panel isn't a grid of toggles. It's a little illustrated living room and bedroom, with the real fan spinning, the real light glowing, and a virtual shiba called Mugi wandering between them. Google Home would never let me build this. With AI coding agents, I could just describe it and build it anyway. This is how it's built, and what I learned over-customizing it.</p>
 
       <figure>
         <video controls playsinline preload="metadata" poster="../../assets/img/poster.jpg">
@@ -45,14 +45,14 @@
       <ul>
         <li><strong>The Google Home app is a fixed grid of tiles.</strong> You can rename and reorder things. You can't redesign it, draw your room, or decide what a fan "looks like".</li>
         <li><strong>A Nest Hub's screen belongs to Google.</strong> There are no apps to install and no custom home screen: you get Google's controls, a clock, or your photos.</li>
-        <li><strong>Half my devices don't speak Google anyway.</strong> The aircon and ceiling fan only understand their own IR and RF remotes. Getting them into Google Home means a cloud bridge and a generic on/off tile, and the loop that decides <em>when</em> to cool doesn't exist there.</li>
+        <li><strong>Half my devices don't speak Google anyway.</strong> The AC and ceiling fan only understand their own IR and RF remotes. Getting them into Google Home means a cloud bridge and a generic on/off tile, and the loop that decides <em>when</em> to cool doesn't exist there.</li>
       </ul>
       <p>So I went around it. A Nest Hub can be <em>cast</em> a web page, using DashCast, the same trick you'd use to show a slideshow on a TV. My Mac mini casts the dashboard to each Hub. One catch: whenever Google takes the screen back (a voice answer, a timer, an alarm), the Hub drops the page and falls back to its photo frame for good. So the backend watches every Hub and quietly puts the dashboard back. Google still handles "Hey Google"; everything you <em>see</em> is mine.</p>
 
       <h3>Where AI comes in</h3>
       <p>A few years ago this would have stayed a sketch in my notes app. Custom IR codes, an SVG room, a cartoon dog with a schedule, a climate controller: each one is a weekend rabbit hole on its own.</p>
-      <p>This time I built it with AI coding agents (mostly Claude Code and Codex) as pair programmers. The first commit was in April; there are about 90 since. The loop is simple: I describe what I want, sometimes as loosely as "Mugi should dress up for Halloween" or "try the fan before the aircon", and the agent drafts it. Then I check it on the actual wall, tell it what's off, and we go again. Because the rooms, the remotes and Mugi are all drawn in code (SVG), the agent can draw too. That's how Mugi got his tricks and eight holiday outfits.</p>
-      <p>What the AI didn't do is decide. I still pick what's worth building and test it on the real hardware, and I set the safety rules myself: the aircon's guard rails, and the rule that the house only <em>suggests</em> things and waits for a yes. (ChatGPT did name Mugi, though.)</p>
+      <p>This time I built it with AI coding agents (mostly Claude Code and Codex) as pair programmers. The first commit was in April; there are about 90 since. The loop is simple: I describe what I want, sometimes as loosely as "Mugi should dress up for Halloween" or "try the fan before the AC", and the agent drafts it. Then I check it on the actual wall, tell it what's off, and we go again. Because the rooms, the remotes and Mugi are all drawn in code (SVG), the agent can draw too. That's how Mugi got his tricks and eight holiday outfits.</p>
+      <p>What the AI didn't do is decide. I still pick what's worth building and test it on the real hardware, and I set the safety rules myself: the AC's guard rails, and the rule that the house only <em>suggests</em> things and waits for a yes. (ChatGPT did name Mugi, though.)</p>
       <div class="note">
         <p><strong>The real shift:</strong> the limit used to be "what can I build in a weekend". Now it's closer to "what can I imagine, and explain clearly". Mugi is what happens when you stop asking whether the platform allows it.</p>
       </div>
@@ -64,21 +64,21 @@
         <li><strong>Ceiling fans and lights</strong> (Fanz) via an RF hub, using learned button codes. Five fan speeds, and a light that cycles off → white → orange → yellow with a three-step dimmer.</li>
         <li><strong>The TV</strong>, with IR power and Cast status.</li>
         <li><strong>Two Google Nest Hubs</strong> as wall dashboards. They're cast a URL and run the dashboard in a no-scroll 1024×600 kiosk mode.</li>
-        <li><strong>An old Galaxy S20+</strong> as the room phone. It's a light sensor (so the Hub knows the room is dark), a speaker for Mugi's voice, and a local "Hey Mugi" listener. Speech is recognised on the phone; audio never leaves it.</li>
+        <li><strong>An old Galaxy S20+</strong> as the room phone. It's a light sensor (so the Hub knows the room is dark), a speaker for Mugi's voice, and a local "Hey Mugi" listener. Speech is recognized on the phone; audio never leaves it.</li>
         <li><strong>Weather</strong> from the national weather service's open data (radar, two-hour forecast, nearest station), and <strong>live bus arrivals</strong> for the stops near home, with a "leave in 3 minutes" nudge.</li>
       </ul>
 
       <h2>Remotes that look like remotes</h2>
       <figure>
         <img src="../../assets/img/remotes.jpg" alt="Three remotes drawn in the dashboard: a Philips TV remote, a Mitsubishi air-conditioner remote with an LCD showing 26°C, and a Fanz ceiling-fan remote" loading="lazy">
-        <figcaption>The TV, aircon and ceiling-fan remotes, drawn after the real ones. Every key is tappable.</figcaption>
+        <figcaption>The TV, AC and ceiling-fan remotes, drawn after the real ones. Every key is tappable.</figcaption>
       </figure>
-      <p>Tap a device in the room and its sheet slides in with quick controls on top and, underneath, <strong>the actual remote</strong>, drawn key for key as an SVG. The Philips has its Netflix and colour keys, the Mitsubishi has its little LCD (showing the room's temperature), and the Fanz fan remote has its round speed dial. Tapping a key on the drawing sends the same signal the real key would.</p>
+      <p>Tap a device in the room and its sheet slides in with quick controls on top and, underneath, <strong>the actual remote</strong>, drawn key for key as an SVG. The Philips has its Netflix and color keys, the Mitsubishi has its little LCD (showing the room's temperature), and the Fanz fan remote has its round speed dial. Tapping a key on the drawing sends the same signal the real key would.</p>
       <p>Under the hood, each key is a code the Broadlink learned from the real remote. "Manage commands" puts a key into learn mode: point the physical remote at the blaster, press the key within 30 seconds, done. Keys that haven't been learned yet are dimmed, and the sheet keeps score ("33/45 learned").</p>
       <p>Two devices needed more than learning:</p>
       <ul>
-        <li><strong>The aircon.</strong> A Mitsubishi remote doesn't send "colder"; every press sends its whole state as a 144-bit frame. So the backend learned <em>one</em> good frame, decodes it, rewrites the temperature byte (degrees minus 16) and recomputes the checksum. That's how it can send an exact "Cool, 25°" for any setpoint, instead of pressing "colder" and hoping.</li>
-        <li><strong>The ceiling light.</strong> Its single RF key steps through off → white → orange → yellow. The backend counts presses to know the colour, so "set it to orange" becomes "press twice". If the light drifts (someone used the wall remote), one tap on the dashboard tells it what the light really shows, without sending anything.</li>
+        <li><strong>The AC.</strong> A Mitsubishi remote doesn't send "colder"; every press sends its whole state as a 144-bit frame. So the backend learned <em>one</em> good frame, decodes it, rewrites the temperature byte (degrees minus 16) and recomputes the checksum. That's how it can send an exact "Cool, 25°" for any setpoint, instead of pressing "colder" and hoping.</li>
+        <li><strong>The ceiling light.</strong> Its single RF key steps through off → white → orange → yellow. The backend counts presses to know the color, so "set it to orange" becomes "press twice". If the light drifts (someone used the wall remote), one tap on the dashboard tells it what the light really shows, without sending anything.</li>
       </ul>
 
       <h2>The shape of it</h2>
@@ -119,14 +119,14 @@
       <p>Around holidays the rooms decorate themselves and Mugi gets a costume: a witch hat for Halloween, a floppy Santa hat for Christmas, a red silk cap for Lunar New Year, rabbit ears for Mid-Autumn, marigolds for Deepavali, and a few more. A <code>?season=</code> query previews any of them out of season, which is how this post got its pictures.</p>
 
       <h2>The Auto Loop: a PI controller that only has a remote</h2>
-      <p>The serious part is the living room's climate controller. The interesting constraint: an inverter aircon already runs its own compressor loop, and all I can do from outside is press remote buttons. So the Auto Loop doesn't control power. It controls <strong>which setpoint the AC is given</strong>, and lets the inverter do the rest.</p>
+      <p>The serious part is the living room's climate controller. The interesting constraint: an inverter AC already runs its own compressor loop, and all I can do from outside is press remote buttons. So the Auto Loop doesn't control power. It controls <strong>which setpoint the AC is given</strong>, and lets the inverter do the rest.</p>
 
       <h3>The loop, step by step</h3>
       <ol>
         <li><strong>Sense.</strong> The RM4's temperature and humidity readings are smoothed with an exponential moving average (α = 0.35), and the loop tracks how fast the room is warming or cooling, in °C per minute.</li>
         <li><strong>Error.</strong> <code>e = filtered temperature − 25.5 °C</code>.</li>
         <li><strong>PI output.</strong> <code>u = 1.2·e + 0.08·∫e</code>. The integral builds up while the room stays warm, so a stubborn afternoon earns more cooling than a brief spike.</li>
-        <li><strong>Pick a setpoint.</strong> When the room reaches 25.8° the AC starts at an eco 26°. If <code>u</code> climbs past 0.5 (or the room is half a degree over target) and the room isn't already cooling quickly, it boosts to 25°. Once the room drops below 25.3° it eases back up towards 26°. It moves one degree at a time, at most every 15 minutes, because the room needs that long to show the effect.</li>
+        <li><strong>Pick a setpoint.</strong> When the room reaches 25.8° the AC starts at an eco 26°. If <code>u</code> climbs past 0.5 (or the room is half a degree over target) and the room isn't already cooling quickly, it boosts to 25°. Once the room drops below 25.3° it eases back up toward 26°. It moves one degree at a time, at most every 15 minutes, because the room needs that long to show the effect.</li>
         <li><strong>Don't switch off at target.</strong> Reaching 25.5° doesn't power the AC off. A warmer setpoint lets the inverter idle down, which is gentler and cheaper than cycling.</li>
       </ol>
       <p>I didn't add a derivative term. The room is slow and the sensor is noisy, so a D term would mostly amplify noise. Instead the measured cooling rate acts as a brake on boosting: if the room is already falling, don't push harder.</p>
@@ -161,7 +161,7 @@
       <h2>Lessons learned</h2>
       <ol class="lessons">
         <li><strong>IR is fire-and-forget, so be honest about state.</strong> The AC never tells you what it's doing. The backend keeps "what I last sent" separate from "what I've actually observed", and the dashboard says <em>unverified</em> rather than pretending.</li>
-        <li><strong>Model the hardware's quirks instead of fighting them.</strong> The ceiling light has one RF button that cycles colours. "Set it to orange" means knowing where in the cycle it is and pressing the right number of times. When the colour is unknown, it refuses rather than guessing.</li>
+        <li><strong>Model the hardware's quirks instead of fighting them.</strong> The ceiling light has one RF button that cycles colors. "Set it to orange" means knowing where in the cycle it is and pressing the right number of times. When the color is unknown, it refuses rather than guessing.</li>
         <li><strong>Keep policy pure.</strong> The controller, fan assist and Mugi's line picker are plain functions: facts in, decision out. That's what makes it safe to keep adding features to something that runs your AC unattended.</li>
         <li><strong>Protect the compressor, and your bill.</strong> Cycle protection and a daily runtime budget sit underneath everything. A clever feature that short-cycles the AC isn't clever.</li>
         <li><strong>Try the fan first.</strong> A comfort score plus a ceiling fan takes the edge off long before the AC needs to work hard.</li>
@@ -183,7 +183,7 @@
   </main>
 
   <footer class="site-foot">
-    Mugi's House · a cosy, over-customised smart home · Illustrations and code are the author's own.
+    Mugi's House · a cozy, over-customized smart home · Illustrations and code are the author's own.
   </footer>
 </body>
 </html>
