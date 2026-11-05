@@ -37,7 +37,7 @@
       </figure>
 
       <h2>Why a room instead of a dashboard</h2>
-      <p>Every smart home app I tried looked like a settings page. I wanted something I'd actually enjoy glancing at on the wall: the room, drawn in a soft farm-game style, showing what the house is doing right now. If the ceiling fan is on speed 5, the fan in the picture is a blur. If the light is set to warm orange at two-thirds, the room glows orange at two-thirds. Tap the fan to change it. Tap the dog to pet him.</p>
+      <p>Every smart home app I tried looked like a settings page. I wanted something I'd actually enjoy glancing at on my desk: the room, drawn in a soft farm-game style, showing what the house is doing right now. If the ceiling fan is on speed 5, the fan in the picture is a blur. If the light is set to warm orange at two-thirds, the room glows orange at two-thirds. Tap the fan to change it. Tap the dog to pet him.</p>
       <p>Then I added a dog, and the dog took over.</p>
 
       <h2>Google Home won't let you, so build around it</h2>
@@ -51,7 +51,7 @@
 
       <h3>Where AI comes in</h3>
       <p>A few years ago this would have stayed a sketch in my notes app. Custom IR codes, an SVG room, a cartoon dog with a schedule, a climate controller: each one is a weekend rabbit hole on its own.</p>
-      <p>This time I built it with AI coding agents (mostly Claude Code and Codex) as pair programmers. The first commit was in April; there are about 90 since. The loop is simple: I describe what I want, sometimes as loosely as "Mugi should dress up for Halloween" or "try the fan before the AC", and the agent drafts it. Then I check it on the actual wall, tell it what's off, and we go again. Because the rooms, the remotes and Mugi are all drawn in code (SVG), the agent can draw too. That's how Mugi got his tricks and eight holiday outfits.</p>
+      <p>This time I built it with AI coding agents (mostly Claude Code and Codex) as pair programmers. The first commit was in April; there are about 90 since. The loop is simple: I describe what I want, sometimes as loosely as "Mugi should dress up for Halloween" or "try the fan before the AC", and the agent drafts it. Then I check it on the actual Hub, tell it what's off, and we go again. Because the rooms, the remotes and Mugi are all drawn in code (SVG), the agent can draw too. That's how Mugi got his tricks and eight holiday outfits.</p>
       <p>What the AI didn't do is decide. I still pick what's worth building and test it on the real hardware, and I set the safety rules myself: the AC's guard rails, and the rule that the house only <em>suggests</em> things and waits for a yes. (ChatGPT did name Mugi, though.)</p>
       <div class="note">
         <p><strong>The real shift:</strong> the limit used to be "what can I build in a weekend". Now it's closer to "what can I imagine, and explain clearly". Mugi is what happens when you stop asking whether the platform allows it.</p>
@@ -63,7 +63,7 @@
         <li><strong>Air conditioners</strong> via Broadlink RM4 Mini IR blasters. The RM4s also report room temperature and humidity, which feed the climate loop.</li>
         <li><strong>Ceiling fans and lights</strong> (Fanz) via an RF hub, using learned button codes. Five fan speeds, and a light that cycles off → white → orange → yellow with a three-step dimmer.</li>
         <li><strong>The TV</strong>, with IR power and Cast status.</li>
-        <li><strong>Two Google Nest Hubs</strong> as wall dashboards. They're cast a URL and run the dashboard in a no-scroll 1024×600 kiosk mode.</li>
+        <li><strong>Two Google Nest Hubs</strong> as always-on dashboards. They're cast a URL and run the dashboard in a no-scroll 1024×600 kiosk mode.</li>
         <li><strong>An old Galaxy S20+</strong> as the room phone. It's a light sensor (so the Hub knows the room is dark), a speaker for Mugi's voice, and a local "Hey Mugi" listener. Speech is recognized on the phone; audio never leaves it.</li>
         <li><strong>Weather</strong> from the national weather service's open data (radar, two-hour forecast, nearest station), and <strong>live bus arrivals</strong> for the stops near home, with a "leave in 3 minutes" nudge.</li>
       </ul>
@@ -165,7 +165,7 @@
         <li><strong>Keep policy pure.</strong> The controller, fan assist and Mugi's line picker are plain functions: facts in, decision out. That's what makes it safe to keep adding features to something that runs your AC unattended.</li>
         <li><strong>Protect the compressor, and your bill.</strong> Cycle protection and a daily runtime budget sit underneath everything. A clever feature that short-cycles the AC isn't clever.</li>
         <li><strong>Try the fan first.</strong> A comfort score plus a ceiling fan takes the edge off long before the AC needs to work hard.</li>
-        <li><strong>Kiosks need to look after themselves.</strong> Self-reload on deploy, a dark-room mode, and a first tap that only wakes the screen. Nobody wants to reboot a Hub on the wall.</li>
+        <li><strong>Kiosks need to look after themselves.</strong> Self-reload on deploy, a dark-room mode, and a first tap that only wakes the screen. Nobody wants to walk over and reboot a Hub.</li>
         <li><strong>Keep the AI on a short leash.</strong> The model writes a dog's one-liners from given facts, in a schema, with no tools. Anything that changes the house is suggest-then-approve.</li>
         <li><strong>A character makes people use it.</strong> Nobody opened the old toggle grid for fun. Everybody says hi to Mugi.</li>
       </ol>
@@ -178,7 +178,7 @@
         <li>A dashboard drawn as your actual room, where every pixel is derived from state.</li>
         <li>Something alive in it. It doesn't have to be a shiba, but it should be a shiba.</li>
       </ul>
-      <p>And if your smart home app won't let you, that's no longer the end of the conversation. Describe what you'd love to see on your wall, build it one small, tested change at a time with an AI pair programmer, and keep the decisions for yourself. Questions welcome. Mugi says <em>*tail wag*</em>.</p>
+      <p>And if your smart home app won't let you, that's no longer the end of the conversation. Describe what you'd love to see on your screen, build it one small, tested change at a time with an AI pair programmer, and keep the decisions for yourself. Questions welcome. Mugi says <em>*tail wag*</em>.</p>
     </article>
   </main>
 
